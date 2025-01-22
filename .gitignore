@@ -1,0 +1,28 @@
+# Node.js dependencies
+node_modules/
+
+# Build and distribution directories
+dist/
+
+# Git bare repository
+life-organiser-frontend-bare.git/
+
+# macOS system files
+.DS_Store
+
+# Environment variables
+.env
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.swp
+
