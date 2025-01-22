@@ -1,9 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-
-const App = () => {
-  return <h1>Hello, Life Organiser!</h1>;
-};
+import App from "./App.js";
+import "./styles.css";
 
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
