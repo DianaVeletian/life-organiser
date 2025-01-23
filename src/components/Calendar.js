@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
-const Calendar = () => {
+const CalendarComponent = ({ onDateChange }) => {
+  const [date, setDate] = useState(new Date());
+
+  const handleDateChange = (newDate) => {
+    setDate(newDate);
+    onDateChange(newDate);
+  };
+
   return (
-    <div>
-      <h2>Calendar Component</h2>
-      <p>This is where the React Calendar will be added later.</p>
+    <div className="calendar-container">
+      <h2>Select a Date</h2>
+      <Calendar
+        onChange={handleDateChange}
+        value={date}
+        next2Label={null}
+        prev2Label={null}
+        className="custom-calendar"
+      />
     </div>
   );
 };
 
-export default Calendar;
+export default CalendarComponent;

@@ -1,18 +1,23 @@
 import React from "react";
 
-const ProgressBar = () => {
+const ProgressBar = ({ tasks }) => {
+  const completedTasks = tasks.filter((task) => task.completed).length;
+  const totalTasks = tasks.length;
+  const progress =
+    totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+
   return (
-    <div style={{ width: "100%", backgroundColor: "#e0e0de", borderRadius: 5 }}>
-      <div
-        style={{
-          width: "50%",
-          height: "10px",
-          backgroundColor: "#007bff",
-          borderRadius: 5,
-        }}
-      ></div>
+    <div className="progress-bar">
+      <h3>{progress}% Completed</h3>
+      <div className="progress">
+        <div
+          className="progress-fill"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
     </div>
   );
 };
 
 export default ProgressBar;
+
